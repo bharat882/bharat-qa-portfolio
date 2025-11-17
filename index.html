@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bharat Saini | QA Engineer & SDET Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio of Bharat Saini – QA Engineer & SDET specializing in automation, API testing, and performance engineering." />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-alt: #020617;
+      --card: #0b1220;
+      --accent: #22c55e;
+      --accent-soft: rgba(34, 197, 94, 0.08);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.75);
+      --radius-xl: 18px;
+      --radius-2xl: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1f2937 0, #020617 50%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 18px 64px;
+    }
+
+    /* NAV */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.75), transparent);
+      margin: -32px -18px 24px;
+      padding: 16px 24px 8px;
+      border-bottom: 1px solid rgba(31, 41, 55, 0.8);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .nav-badge {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 4px var(--accent-soft);
+    }
+
+    .nav-name {
+      font-weight: 600;
+      color: #f9fafb;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 14px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: border 0.18s ease, background 0.18s ease, color 0.18s ease;
+    }
+
+    .nav-links a:hover {
+      border-color: rgba(55, 65, 81, 0.8);
+      background: rgba(15, 23, 42, 0.85);
+      color: #e5e7eb;
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 2.4fr) minmax(0, 1.6fr);
+      gap: 32px;
+      padding: 20px 0 8px;
+    }
+
+    @media (max-width: 820px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hero-main {
+      padding-right: 8px;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(34, 197, 94, 0.08);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      font-size: 11px;
+      color: #bbf7d0;
+      margin-bottom: 14px;
+    }
+
+    .hero-title {
+      font-size: clamp(30px, 4vw, 36px);
+      font-weight: 650;
+      letter-spacing: -0.03em;
+      margin: 0 0 10px;
+      color: #f9fafb;
+    }
+
+    .hero-subtitle {
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 640px;
+    }
+
+    .hero-subtitle strong {
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 16px 0 20px;
+    }
+
+    .tag {
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      color: #e5e7eb;
+      background: rgba(15, 23, 42, 0.85);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 8px 15px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 500;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: background 0.18s ease, transform 0.12s ease, box-shadow 0.18s ease, border 0.18s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #22c55e, #4ade80);
+      color: #022c22;
+      box-shadow: 0 12px 30px rgba(34, 197, 94, 0.45);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 40px rgba(34, 197, 94, 0.55);
+    }
+
+    .btn-ghost {
+      background: rgba(15, 23, 42, 0.9);
+      border-color: rgba(55, 65, 81, 0.9);
+      color: #e5e7eb;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 1);
+      border-color: rgba(75, 85, 99, 1);
+    }
+
+    .hero-meta {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .hero-highlight {
+      margin-top: 14px;
+      padding: 8px 12px;
+      border-radius: 14px;
+      background: radial-gradient(circle at left, rgba(34, 197, 94, 0.18), transparent 55%);
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .hero-highlight strong {
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    .hero-side {
+      background: radial-gradient(circle at top left, rgba(34, 197, 94, 0.24), transparent 55%), radial-gradient(circle at bottom, rgba(15, 23, 42, 0.9), #020617);
+      border-radius: var(--radius-2xl);
+      border: 1px solid rgba(31, 41, 55, 0.95);
+      box-shadow: var(--shadow-soft);
+      padding: 18px 16px 16px;
+      font-size: 13px;
+    }
+
+    .side-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #f9fafb;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .side-pill {
+      font-size: 11px;
+      color: #bbf7d0;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(34, 197, 94, 0.4);
+    }
+
+    .side-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 8px;
+    }
+
+    .side-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 6px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .side-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 999px;
+      background: var(--accent);
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+
+    .side-caption {
+      margin-top: 4px;
+      font-size: 11px;
+      color: #9ca3af;
+    }
+
+    /* SECTIONS */
+    section {
+      margin-top: 34px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #f9fafb;
+    }
+
+    .section-kicker {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+    }
+
+    .section-body {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* GRID */
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    @media (min-width: 880px) {
+      .grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    /* CARDS */
+    .card {
+      background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.98));
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(31, 41, 55, 0.95);
+      padding: 12px 12px 12px;
+      box-shadow: 0 12px 35px rgba(15, 23, 42, 0.8);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+      gap: 8px;
+    }
+
+    .card-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #f9fafb;
+    }
+
+    .card-sub {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .card-body {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .card-list {
+      margin: 4px 0 6px;
+      padding-left: 18px;
+      font-size: 12px;
+    }
+
+    .card-list li {
+      margin-bottom: 3px;
+    }
+
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .card-tag {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 3px 7px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.92);
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      color: #9ca3af;
+    }
+
+    .card-link {
+      font-size: 12px;
+      margin-top: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      color: #a5b4fc;
+    }
+
+    /* SKILLS */
+    .skills-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .skill-chip {
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: rgba(15, 23, 42, 0.9);
+      font-size: 11px;
+      color: #e5e7eb;
+    }
+
+    /* CERTS */
+    .cert-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 13px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      background: rgba(15, 23, 42, 0.9);
+      margin-bottom: 6px;
+    }
+
+    .cert-meta {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    /* FOOTER / CONTACT */
+    .contact-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    @media (min-width: 680px) {
+      .contact-grid {
+        grid-template-columns: 2fr 1.4fr;
+      }
+    }
+
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .contact-list li {
+      margin-bottom: 4px;
+    }
+
+    .contact-cta {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    footer {
+      margin-top: 32px;
+      border-top: 1px solid rgba(31, 41, 55, 0.9);
+      padding-top: 12px;
+      font-size: 11px;
+      color: #6b7280;
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .pill-soft {
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(31, 41, 55, 0.9);
+    }
+
+    /* ANCHOR OFFSET */
+    .anchor-offset {
+      scroll-margin-top: 80px;
+    }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <div class="nav-inner">
+      <div class="nav-left">
+        <span class="nav-badge"></span>
+        <span class="nav-name">Bharat Saini</span>
+        <span>• QA Engineer & SDET</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <main class="page">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-main">
+        <div class="hero-kicker">
+          <span>ISTQB-certified QA • SDET – Java & Playwright</span>
+        </div>
+        <h1 class="hero-title">I build reliable test automation for web, APIs, and performance.</h1>
+        <p class="hero-subtitle">
+          I’m <strong>Bharat Saini</strong>, a QA Engineer & SDET based in Toronto, ON, with ~2 years of experience testing
+          <strong>ERP, CRM, and fulfillment systems</strong>. I design lean automation frameworks, build API and performance suites,
+          and collaborate with dev/DevOps teams so releases ship faster and with confidence.
+        </p>
+
+        <div class="hero-tags">
+          <span class="tag">Selenium • Playwright • Java • TypeScript</span>
+          <span class="tag">API & Performance Testing</span>
+          <span class="tag">CI/CD • Jenkins • GitHub Actions</span>
+        </div>
+
+        <div class="hero-actions">
+          <!-- TODO: replace # with your real resume link -->
+          <a href="#" class="btn-primary" target="_blank" rel="noreferrer">
+            View Resume (PDF)
+          </a>
+          <!-- TODO: replace with your real GitHub URL -->
+          <a href="https://github.com/bharat882" class="btn-ghost" target="_blank" rel="noreferrer">
+            GitHub Profile
+          </a>
+          <a href="https://www.linkedin.com/in/bharatsaini882/" class="btn-ghost" target="_blank" rel="noreferrer">
+            LinkedIn
+          </a>
+        </div>
+
+        <div class="hero-meta">
+          Toronto, ON • Open to QA / SDET / Test Automation roles (Hybrid / Remote – Canada)
+        </div>
+
+        <div class="hero-highlight">
+          <strong>Impact snapshot:</strong> Automated regression and API suites that cut manual effort by ~65–70%,
+          added performance baselines for APIs, and improved defect detection before UAT.
+        </div>
+      </div>
+
+      <aside class="hero-side">
+        <div class="side-title">
+          Recent focus
+          <span class="side-pill">Last updated: Nov 2025</span>
+        </div>
+        <ul class="side-list">
+          <li>
+            <span class="side-dot"></span>
+            <span>Building <strong>Playwright + TypeScript</strong> framework for VTiger CRM with POM, tagging, and HTML reporting.</span>
+          </li>
+          <li>
+            <span class="side-dot"></span>
+            <span>Designing <strong>JMeter</strong> performance tests for FakeStore E-Commerce API (baseline, load, stress).</span>
+          </li>
+          <li>
+            <span class="side-dot"></span>
+            <span>Strengthening <strong>API & SQL validation</strong> across ERP, healthcare, and fulfillment-style workflows.</span>
+          </li>
+        </ul>
+        <div class="side-caption">
+          My goal is to bring an <strong>engineering-first</strong> approach to QA — treating test code, data, and pipelines
+          with the same rigor as production services.
+        </div>
+      </aside>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="anchor-offset">
+      <div class="section-header">
+        <h2 class="section-title">About</h2>
+        <span class="section-kicker">Who I am</span>
+      </div>
+      <div class="section-body">
+        I started my career testing <strong>enterprise and ERP-style systems</strong>, where data integrity and workflows matter as much
+        as UI. Since then, I’ve moved deeper into <strong>test automation, API testing, and performance engineering</strong>.
+        <br /><br />
+        I enjoy:
+        <ul>
+          <li>Translating business workflows into clean, maintainable test cases and automation suites.</li>
+          <li>Building small but robust frameworks (Selenium, Playwright, Postman, JMeter) that grow with the team.</li>
+          <li>Using SQL and logs to understand what’s really happening behind the UI.</li>
+        </ul>
+        I’m actively looking for opportunities where I can <strong>own test strategy end-to-end</strong> — from manual exploratory testing
+        to automated regression, API, and performance checks integrated into CI/CD.
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="anchor-offset">
+      <div class="section-header">
+        <h2 class="section-title">Skills</h2>
+        <span class="section-kicker">What I work with</span>
+      </div>
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Automation & Frameworks</div>
+              <div class="card-sub">UI • API • Performance</div>
+            </div>
+          </div>
+          <div class="skills-wrap">
+            <span class="skill-chip">Selenium • Java • TestNG</span>
+            <span class="skill-chip">Playwright • TypeScript</span>
+            <span class="skill-chip">Postman • Newman</span>
+            <span class="skill-chip">Apache JMeter</span>
+            <span class="skill-chip">Git • GitHub Actions • Jenkins</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Testing & Domain</div>
+              <div class="card-sub">Enterprise, CRM, ERP, Fulfillment</div>
+            </div>
+          </div>
+          <div class="skills-wrap">
+            <span class="skill-chip">Functional & Regression Testing</span>
+            <span class="skill-chip">Integration & UAT Support</span>
+            <span class="skill-chip">API / JSON validation</span>
+            <span class="skill-chip">SQL (MySQL / Oracle)</span>
+            <span class="skill-chip">Healthcare & Logistics-style flows</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Quality Engineering</div>
+              <div class="card-sub">How I approach QA</div>
+            </div>
+          </div>
+          <ul class="card-list">
+            <li>Designing test scenarios directly from requirements & edge cases.</li>
+            <li>Balancing manual exploratory tests with automation ROI.</li>
+            <li>Integrating tests into CI/CD and monitoring results over time.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Languages & Tools</div>
+              <div class="card-sub">Daily drivers</div>
+            </div>
+          </div>
+          <div class="skills-wrap">
+            <span class="skill-chip">Java</span>
+            <span class="skill-chip">TypeScript / JavaScript</span>
+            <span class="skill-chip">C# (for QA utilities)</span>
+            <span class="skill-chip">SQL</span>
+            <span class="skill-chip">Linux CLI</span>
+            <span class="skill-chip">VS Code • IntelliJ</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="anchor-offset">
+      <div class="section-header">
+        <h2 class="section-title">Projects</h2>
+        <span class="section-kicker">Selected QA & SDET work</span>
+      </div>
+      <div class="section-body">
+        Below is a curated set of personal projects that mirror how I’d approach QA/SDET work in a real team:
+        UI, API, performance, and utilities — all with clean, reviewable code.
+      </div>
+
+      <div class="grid grid-2" style="margin-top: 14px;">
+        <!-- Project 1 -->
+        <article class="card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">VTiger CRM – Playwright + TypeScript Automation Framework</h3>
+              <div class="card-sub">UI regression suite with POM, tagging, and HTML reporting</div>
+            </div>
+          </div>
+          <div class="card-body">
+            A professional-grade UI automation framework for VTiger CRM built with <strong>Playwright Test</strong> and
+            <strong>TypeScript</strong>, showcasing how I’d organize tests in a real product team.
+          </div>
+          <ul class="card-list">
+            <li>Implemented a clean <strong>Page Object Model</strong> to decouple locators, actions, and tests.</li>
+            <li>Structured tests into <strong>smoke vs regression</strong> using tags for flexible execution.</li>
+            <li>Included <strong>Playwright HTML reporting</strong> for rapid failure triage.</li>
+            <li>Designed the project to plug into <strong>GitHub Actions</strong> for CI runs.</li>
+          </ul>
+          <div class="card-tags">
+            <span class="card-tag">Playwright</span>
+            <span class="card-tag">TypeScript</span>
+            <span class="card-tag">POM</span>
+            <span class="card-tag">UI Automation</span>
+          </div>
+          <!-- TODO: replace with real repo link -->
+          <a href="https://github.com/your-github/vtiger-crm-playwright-ts" class="card-link" target="_blank" rel="noreferrer">
+            View on GitHub →
+          </a>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">OrangeHRM – Selenium + Java Test Automation Suite</h3>
+              <div class="card-sub">Data-driven UI tests with reusable components</div>
+            </div>
+          </div>
+          <div class="card-body">
+            A <strong>Selenium + Java + TestNG</strong> framework targeting key HR workflows (login, leave management, employee data).
+          </div>
+          <ul class="card-list">
+            <li>Built reusable <strong>BaseTest</strong> and page classes, reducing duplication across tests.</li>
+            <li>Used <strong>DataProviders</strong> in TestNG to run multiple leave types as one parameterized test.</li>
+            <li>Captured screenshots, assertions, and Allure-friendly annotations for better reporting.</li>
+            <li>Prepared the suite for nightly runs via Jenkins with simple configuration.</li>
+          </ul>
+          <div class="card-tags">
+            <span class="card-tag">Selenium</span>
+            <span class="card-tag">Java</span>
+            <span class="card-tag">TestNG</span>
+            <span class="card-tag">HR Workflows</span>
+          </div>
+          <!-- TODO: replace with real repo link -->
+          <a href="https://github.com/your-github/orangehrm-selenium-java" class="card-link" target="_blank" rel="noreferrer">
+            View on GitHub →
+          </a>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">FakeStore E-Commerce API – JMeter Performance Testing</h3>
+              <div class="card-sub">Baseline, load, and stress tests with realistic data</div>
+            </div>
+          </div>
+          <div class="card-body">
+            A full <strong>JMeter performance test suite</strong> for the FakeStore REST API, modeling realistic e-commerce workloads.
+          </div>
+          <ul class="card-list">
+            <li>Designed three user journeys: anonymous browsing, login + view cart, add to cart.</li>
+            <li>Used <strong>CSV-driven test data</strong> and <strong>JWT token correlation</strong> for authenticated flows.</li>
+            <li>Executed non-GUI runs with <strong>HTML reporting</strong> and captured baseline response times.</li>
+            <li>Analyzed results to highlight potential bottlenecks under higher concurrency.</li>
+          </ul>
+          <div class="card-tags">
+            <span class="card-tag">JMeter</span>
+            <span class="card-tag">Performance</span>
+            <span class="card-tag">API</span>
+            <span class="card-tag">Workload Modeling</span>
+          </div>
+          <!-- TODO: replace with real repo link -->
+          <a href="https://github.com/your-github/fakestore-jmeter-performance" class="card-link" target="_blank" rel="noreferrer">
+            View on GitHub →
+          </a>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">ReqRes API – Postman / Newman Regression Suite</h3>
+              <div class="card-sub">Automated API regression integrated with CI</div>
+            </div>
+          </div>
+          <div class="card-body">
+            A <strong>Postman + Newman</strong> API test suite covering core CRUD, authentication, and negative test flows for the ReqRes demo API.
+          </div>
+          <ul class="card-list">
+            <li>Automated 50+ API tests with <strong>environment-specific variables</strong> (dev / QA).</li>
+            <li>Used <strong>JSON schema validation</strong> to catch contract and payload shape issues.</li>
+            <li>Integrated Newman into <strong>Jenkins</strong>, generating htmlextra HTML reports on each run.</li>
+            <li>Reduced manual API regression effort by ~65% while improving consistency.</li>
+          </ul>
+          <div class="card-tags">
+            <span class="card-tag">Postman</span>
+            <span class="card-tag">Newman</span>
+            <span class="card-tag">API Testing</span>
+            <span class="card-tag">Jenkins</span>
+          </div>
+          <!-- TODO: replace with real repo link -->
+          <a href="https://github.com/your-github/reqres-postman-regression" class="card-link" target="_blank" rel="noreferrer">
+            View on GitHub →
+          </a>
+        </article>
+
+        <!-- Project 5 -->
+        <article class="card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">Healthcare Appointment Management – QA Project</h3>
+              <div class="card-sub">End-to-end test design across UI, API, and DB</div>
+            </div>
+          </div>
+          <div class="card-body">
+            A domain-style QA project simulating a healthcare appointment system, focused on correctness and data integrity.
+          </div>
+          <ul class="card-list">
+            <li>Created detailed <strong>test scenarios</strong> for scheduling, canceling, and rescheduling visits.</li>
+            <li>Validated responses via <strong>API tests</strong> and verified persistence with <strong>SQL queries</strong>.</li>
+            <li>Checked edge cases: overlapping slots, invalid inputs, and access control rules.</li>
+            <li>Documented defects, expected behavior, and test evidence in a structured format.</li>
+          </ul>
+          <div class="card-tags">
+            <span class="card-tag">Domain QA</span>
+            <span class="card-tag">API + SQL</span>
+            <span class="card-tag">Healthcare</span>
+          </div>
+          <!-- TODO: replace with real repo / doc link -->
+          <a href="#" class="card-link">
+            Request detailed test pack →
+          </a>
+        </article>
+
+        <!-- Project 6 -->
+        <article class="card">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">Plagiarism Detection Tool – Java Utility</h3>
+              <div class="card-sub">Levenshtein-based similarity for text and code files</div>
+            </div>
+          </div>
+          <div class="card-body">
+            A standalone <strong>Java</strong> utility that compares two documents (text or source code) and calculates similarity using
+            <strong>Levenshtein distance</strong> and related algorithms.
+          </div>
+          <ul class="card-list">
+            <li>Implemented configurable similarity thresholds and normalized distance scoring.</li>
+            <li>Handled whitespace and tokenization to make results robust across code formatting differences.</li>
+            <li>Wrote unit tests to verify behavior across edge cases and different file sizes.</li>
+            <li>Demonstrates comfort with <strong>core Java</strong>, algorithms, and writing clean, testable code.</li>
+          </ul>
+          <div class="card-tags">
+            <span class="card-tag">Java</span>
+            <span class="card-tag">Algorithms</span>
+            <span class="card-tag">Utility Tool</span>
+          </div>
+          <!-- TODO: replace with real repo link -->
+          <a href="https://github.com/your-github/plagiarism-detector-java" class="card-link" target="_blank" rel="noreferrer">
+            View on GitHub →
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certifications" class="anchor-offset">
+      <div class="section-header">
+        <h2 class="section-title">Certifications</h2>
+        <span class="section-kicker">Validated knowledge</span>
+      </div>
+      <div class="grid">
+        <div class="cert-row">
+          <div>
+            <strong>ISTQB Certified Tester – Foundation Level</strong>
+            <div class="cert-meta">International Software Testing Qualifications Board</div>
+          </div>
+          <div class="cert-meta">2025</div>
+        </div>
+        <div class="cert-row">
+          <div>
+            <strong>ISTQB Advanced – Test Automation Engineer</strong>
+            <div class="cert-meta">Advanced focus on automation design and architecture</div>
+          </div>
+          <div class="cert-meta">2025</div>
+        </div>
+        <div class="cert-row">
+          <div>
+            <strong>Salesforce Certified Administrator</strong>
+            <div class="cert-meta">CRM configuration, data, and security fundamentals</div>
+          </div>
+          <div class="cert-meta">2025</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="anchor-offset">
+      <div class="section-header">
+        <h2 class="section-title">Contact</h2>
+        <span class="section-kicker">Let’s talk</span>
+      </div>
+
+      <div class="contact-grid">
+        <div>
+          <p class="section-body">
+            If you’re hiring for a <strong>QA Engineer, SDET, or Test Automation</strong> role and need someone who can design
+            tests, write code, and collaborate closely with dev/DevOps, I’d be happy to chat.
+          </p>
+          <ul class="contact-list">
+            <li><strong>Email:</strong> <a href="mailto:heybharatsaini2@gmail.com">heybharatsaini2@gmail.com</a></li>
+            <li><strong>Phone:</strong> <a href="tel:+14389287653">+1 (438) 928-7653</a></li>
+            <li><strong>Location:</strong> Toronto, Ontario, Canada</li>
+            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/bharatsaini882/" target="_blank" rel="noreferrer">linkedin.com/in/bharatsaini882/</a></li>
+          </ul>
+          <p class="contact-cta">
+            I usually respond fastest via email or LinkedIn. If you’d like, I can also walk you through any of the projects
+            above in a live session.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">Quick links</div>
+              <div class="card-sub">For recruiters & hiring managers</div>
+            </div>
+          </div>
+          <ul class="card-list">
+            <li><strong>Resume:</strong> One-page PDF focused on QA/SDET roles.</li>
+            <li><strong>GitHub:</strong> Public repos for all projects listed above.</li>
+            <li><strong>Tech focus:</strong> Automation (UI + API), Performance, CI-integrated testing.</li>
+            <li><strong>Visa:</strong> Eligible to work in Canada.</li>
+          </ul>
+          <div class="card-tags">
+            <span class="card-tag">QA Engineer</span>
+            <span class="card-tag">SDET</span>
+            <span class="card-tag">Automation</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>© <span id="year"></span> Bharat Saini. All rights reserved.</span>
+      <span class="pill-soft">Built with HTML & CSS • Optimized for recruiters.</span>
+    </footer>
+  </main>
+
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
